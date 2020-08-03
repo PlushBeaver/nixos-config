@@ -1,22 +1,30 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    (neovim.override {
-      configure = {
-        packages.plugins = with vimPlugins; {
-          start = [
-            vim-lastplace
-            vim-nix
-            vim-plug
-          ];
-          opt = [];
-        };
-      };
+  home-manager.users.dmitry.programs.neovim = {
+    enable = true;
 
-      vimAlias = true;
-    })
-  ];
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
 
-  programs.vim.defaultEditor = true;
+    plugins = with pkgs.vimPlugins; [
+      airline
+      nerdtree
+
+      fugitive
+      gitgutter
+
+      nerdcommenter
+      surround
+
+      vim-markdown
+      vim-move
+      vim-nix
+      vim-pandoc
+      vim-pandoc-syntax
+    ];
+
+    extraConfig = builtins.readFile ../config/init.vim;
+  };
 }
