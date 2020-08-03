@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 let
   bifit = inputs.secrets.work.bifit;
@@ -22,4 +22,9 @@ in {
       "--cap-add=NET_ADMIN"
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "offload-tcp" (builtins.readFile ./offload-tcp.sh))
+    (writeShellScriptBin "netns-setup-reverse" (builtins.readFile ./netns-setup-reverse.sh))
+  ];
 }
