@@ -16,6 +16,7 @@
 
     hping
     httpie
+    iptables
     ncat
     qbittorrent
     socat
