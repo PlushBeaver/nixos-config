@@ -1,19 +1,14 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     dunst # TODO: home-manager: services.dunst
-    rofi  # TODO: home-manager: programs.rofi
     maim
 
-    rxvt-unicode
-
-    xxkb
+    rxvt-unicode # TODO: weird behavior when reqired from i3.nix
 
     clipit
-    xclip
     xsel
-    xdotool
 
     xorg.xev
     xorg.xprop
@@ -24,4 +19,19 @@
     aspellDicts.en-computers
     aspellDicts.en-science
   ];
+
+  services.xserver = {
+    enable = true;
+
+    videoDrivers = ["nvidia"];
+
+    layout = "us,ru";
+    xkbModel = "pc105";
+    xkbOptions = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
+
+    startDbusSession = true;
+
+    displayManager.sddm.enable = true;
+    windowManager.i3.enable = true;
+  };
 }

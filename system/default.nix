@@ -12,6 +12,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  time.timeZone = "Europe/Moscow";
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
@@ -26,20 +28,4 @@
     SystemMaxUse=64M
     RuntimeMaxUse=64M
     '';
-
-  services.xserver = {
-    enable = true;
-
-    videoDrivers = ["nvidia"];
-
-    layout = "us,ru";
-    xkbOptions = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
-
-    startDbusSession = true;
-
-    displayManager.sddm.enable = true;
-    windowManager.i3.enable = true;
-  };
-
-  time.timeZone = "Europe/Moscow";
 }
