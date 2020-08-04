@@ -5,9 +5,6 @@
   environment.systemPackages = with pkgs; [
     man-pages
 
-    gitAndTools.gitFull
-    git-secret
-
     cmake
     gcc
     gdb
@@ -36,4 +33,23 @@
     pandoc
     plantuml
   ];
+
+  home-manager.users.dmitry = {
+    # TODO: https://github.com/dandavison/delta maybe?
+    programs.git = {
+      enable = true;
+      package = pkgs.gitAndTools.gitFull;
+      ignores = ["/result"];
+      userName = "Dmitry Kozlyuk";
+      userEmail = "dmitry.kozliuk@gmail.com";
+      extraConfig = {
+        sendemail = {
+          smtpEncryption = "tls";
+          smtpServer = "smtp.gmail.com";
+          smtpUser = "dmitry.kozliuk@gmail.com";
+          smtpServerPort = 587;
+        };
+      };
+    };
+  };
 }

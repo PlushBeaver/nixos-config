@@ -27,4 +27,16 @@ in {
     (writeShellScriptBin "offload-tcp" (builtins.readFile ./offload-tcp.sh))
     (writeShellScriptBin "netns-setup-reverse" (builtins.readFile ./netns-setup-reverse.sh))
   ];
+
+  home-manager.users.dmitry = {
+    programs.git.includes = [
+      {
+        condition = "gitdir:~/work/";
+        contents.user = {
+          email = "kozlyuk@bifit.com";
+          name = "Dmitry Kozlyuk";
+        };
+      }
+    ];
+  };
 }
