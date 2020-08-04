@@ -19,7 +19,9 @@
     xorg.xprop
     xorg.xhost
 
-    hunspellDicts.ru-ru
-    hunspellDicts.en-us
+    aspellDicts.ru
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
   ];
 }
