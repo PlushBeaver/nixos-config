@@ -7,6 +7,8 @@
 
     rxvt-unicode # TODO: weird behavior when reqired from i3.nix
 
+    xxkb
+
     clipit
     xsel
 
