@@ -12,6 +12,7 @@
 
     discord
     tdesktop
+    skype
     zoom-us
 
     hping
