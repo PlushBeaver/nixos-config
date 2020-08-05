@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 
 let
   bifit = inputs.secrets.work.bifit;
@@ -29,14 +29,20 @@ in {
   ];
 
   home-manager.users.dmitry = {
-    programs.git.includes = [
-      {
-        condition = "gitdir:~/work/";
-        contents.user = {
+    programs.git.includes =
+      let
+        dirs = [
+          "~/work/"
+          "~/go/src/${bifit.gitServer}/"
+        ];
+        user = {
           email = "kozlyuk@bifit.com";
           name = "Dmitry Kozlyuk";
         };
-      }
-    ];
+      in
+        lib.forEach dirs (dir: {
+          condition = "gitdir:${dir}";
+          contents = { inherit user; };
+        });
   };
 }

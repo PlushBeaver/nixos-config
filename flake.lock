@@ -46,7 +46,7 @@
     },
     "secrets": {
       "locked": {
-        "narHash": "sha256-o4FteWUiQeXQGXbVi6mSHDryNL8nUG3mzrqvaMM9QCY=",
+        "narHash": "sha256-sVB/KxlNw9Ou85mC+ywbOp3YuJRqyXG1XKq7r1Bni+Q=",
         "path": "/home/dmitry/src/secrets.nix",
         "type": "path"
       },
