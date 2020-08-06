@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  programs.vim.defaultEditor = true;
+
   home-manager.users.dmitry.programs.neovim = {
     enable = true;
 
