@@ -137,6 +137,7 @@
 
       startup = [
         { command = "${pkgs.xxkb}/bin/xxkb &"; }
+        { command = "${pkgs.clipit}/bin/clipit &"; }
       ];
 
       bars = [

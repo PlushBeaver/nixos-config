@@ -36,4 +36,16 @@
     displayManager.sddm.enable = true;
     windowManager.i3.enable = true;
   };
+
+  home-manager.users.dmitry.xsession = {
+    enable = true;
+    initExtra = ''
+      xrdb -merge -override .Xresources
+
+      firefox &
+      telegram-desktop &
+      claws-mail &
+      discord &
+      '';
+  };
 }
