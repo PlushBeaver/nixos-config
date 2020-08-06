@@ -25,6 +25,13 @@
         "load".settings.format = "${span "#aaa" "CPU:"} %1min";
       };
 
+      memory = {
+        "memory".settings = {
+          format = "${span "#aaa" "Used:"} %used";
+          format_degraded = "${span "#aaa" "Free:"} %free";
+        };
+      };
+
       time = {
         "tztime local".settings.format = "%A %Y-%m-%d %H:%M:%S";
       };
@@ -44,6 +51,7 @@
         (ethernet "VPN" "tun0")
         (ethernet "BIFIT" "bifit")
         load
+        memory
         time
       ]);
   };
