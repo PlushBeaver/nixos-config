@@ -8,29 +8,21 @@
 
     chromium
     firefox
-    pan
 
     discord
-    tdesktop
     skype
+    tdesktop
+    teams
     zoom-us
 
+    curl
     hping
     httpie
     iptables
     ncat
     qbittorrent
     socat
+    wget
     wireshark-qt
-
-    (makeAutostartItem {
-      name = "org.qbittorrent.qBittorrent";
-      package = qbittorrent;
-    })
-
-    (makeAutostartItem {
-      name = "pan";
-      package = pan;
-    })
   ];
 }
