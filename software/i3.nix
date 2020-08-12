@@ -22,10 +22,10 @@
                 activeOption = given active "-i \$(${pkgs.xdotool}/bin/xdotool getactivewindow)";
                 selectionOption = given selection "--select";
                 sourceOptions = "${activeOption} ${selectionOption}";
-                toClipboardOption = given toClipboard "${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
+                toClipboardOption = given toClipboard "| ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
                 toFileOption = given toFile "~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png";
-                targetOptions = "${toFileOption} | ${toClipboardOption}";
-              in "exec maim ${targetOptions} ${targetOptions}";
+                targetOptions = "${toFileOption} ${toClipboardOption}";
+              in "exec maim ${sourceOptions} ${targetOptions}";
           };
 
           bindings =
