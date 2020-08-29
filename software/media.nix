@@ -11,6 +11,9 @@
     smplayer
     xarchiver
 
+    # TODO: office.nix?
+    ledger
+
     # FIXME: aggressive file associations
     #calibre
   ];
