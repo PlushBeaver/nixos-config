@@ -4,6 +4,7 @@
   # Things I do for love (c).
   environment.systemPackages = with pkgs; [
     man-pages
+    moreutils
 
     cmake
     gcc
