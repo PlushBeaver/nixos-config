@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     geeqie
+    imagemagick
     libreoffice-fresh
     mpv
     pasystray
