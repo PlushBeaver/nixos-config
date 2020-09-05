@@ -45,6 +45,9 @@
       userName = "Dmitry Kozlyuk";
       userEmail = "dmitry.kozliuk@gmail.com";
       extraConfig = {
+        core = {
+          quotePath = false;
+        };
         sendemail = {
           smtpEncryption = "tls";
           smtpServer = "smtp.gmail.com";
