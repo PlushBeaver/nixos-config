@@ -1,11 +1,9 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-
   home-manager.users.dmitry = {
+    home.stateVersion = "20.09";
+
     programs = {
       chromium = {
         enable = true;

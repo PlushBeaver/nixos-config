@@ -11,12 +11,12 @@ in {
 
   environment.etc."/docker/certs.d/${docker.domain}/ca.crt".text = docker.rootCA;
 
-  docker-containers."docker-veth-pair-plugin" = {
+  virtualisation.oci-containers.containers."docker-veth-pair-plugin" = {
     image = "${docker.domain}/build/docker-veth-pair-network-plugin";
     volumes = [
       "/run/docker/plugins:/run/docker/plugins"
     ];
-    extraDockerOptions = [
+    extraOptions = [
       "--rm"
       "--network=host"
       "--cap-add=NET_ADMIN"
