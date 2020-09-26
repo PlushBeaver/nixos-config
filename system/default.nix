@@ -23,6 +23,8 @@
     };
   };
 
+  services.devmon.enable = true;
+
   services.journald.extraConfig = ''
     Storage=volatile
     SystemMaxUse=64M

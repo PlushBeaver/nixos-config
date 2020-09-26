@@ -1,5 +1,0 @@
-{ ... }:
-
-{
-  console.keyMap = "ru";
-}
