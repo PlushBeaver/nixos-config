@@ -46,6 +46,7 @@
       telegram-desktop &
       claws-mail &
       discord &
+      pasystray &
       '';
   };
 }
