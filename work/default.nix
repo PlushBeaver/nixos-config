@@ -11,6 +11,10 @@ in {
 
   environment.etc."/docker/certs.d/${docker.domain}/ca.crt".text = docker.rootCA;
 
+  systemd.services.docker.environment = {
+    GODEBUG = "x509ignoreCN=0";
+  };
+
   virtualisation.oci-containers.containers."docker-veth-pair-plugin" = {
     image = "${docker.domain}/build/docker-veth-pair-network-plugin";
     volumes = [
