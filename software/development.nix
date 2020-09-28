@@ -33,6 +33,8 @@
     ansible
     docker-compose
 
+    nixfmt
+
     pandoc
     plantuml
   ];
