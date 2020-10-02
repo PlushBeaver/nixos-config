@@ -30,7 +30,7 @@
     python37Packages.pylint
     python37Packages.rope
 
-    ansible
+    ansible_2_9
     docker-compose
 
     nixfmt
