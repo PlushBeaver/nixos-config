@@ -15,7 +15,9 @@
     ninja
 
     dep
+    easyjson
     go
+    go-swagger
     grpc
     grpcurl
     protobuf
