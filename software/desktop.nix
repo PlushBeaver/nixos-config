@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dunst # TODO: home-manager: services.dunst
     maim
 
     rxvt-unicode # TODO: weird behavior when reqired from i3.nix

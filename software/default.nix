@@ -6,6 +6,7 @@
     ./desktop.nix
     ./development.nix
     ./docker.nix
+    ./dunst.nix
     ./fonts.nix
     ./gaming.nix
     ./i3.nix
