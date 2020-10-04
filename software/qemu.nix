@@ -1,14 +1,29 @@
 { pkgs, ... }:
 
-{
-  environment.systemPackages = with pkgs; [
-    (qemu.override {
-      hostCpuOnly = true;
-      smbdSupport = true;
-    })
+let
+  qemuWithSamba = pkgs.qemu.override {
+    hostCpuOnly = true;
+    smbdSupport = true;
+  };
+in {
+  virtualisation.libvirtd = {
+    enable = true;
+    qemuPackage = qemuWithSamba;
+  };
 
-    kvm
-    qemu-utils
+  users.users."dmitry".extraGroups = [
+    "libvirtd"
+  ];
+
+  environment.systemPackages = with pkgs; [
     OVMF
+    kvm
+    (libguestfs.override { qemu = qemuWithSamba; })
+    libosinfo
+    libvirt
+    qemu-utils
+    qemuWithSamba
+    virt-manager
+    virt-viewer
   ];
 }
