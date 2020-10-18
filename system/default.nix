@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -30,4 +30,14 @@
     SystemMaxUse=64M
     RuntimeMaxUse=64M
     '';
+
+  environment.systemPackages = [
+    (pkgs.writeScriptBin "nic-reload" ''
+        #!${pkgs.stdenv.shell}
+        echo 1 > /sys/bus/pci/devices/0000:04:04.0/remove
+        echo 1 > /sys/bus/pci/devices/0000:05:05.0/remove
+        sleep 1
+        echo 1 > /sys/bus/pci/rescan
+      '')
+    ];
 }
