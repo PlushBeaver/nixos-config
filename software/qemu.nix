@@ -18,7 +18,7 @@ in {
   environment.systemPackages = with pkgs; [
     OVMF
     kvm
-    (libguestfs.override { qemu = qemuWithSamba; })
+    #(libguestfs.override { qemu = qemuWithSamba; }) -- broken in 20.09
     libosinfo
     libvirt
     qemu-utils
