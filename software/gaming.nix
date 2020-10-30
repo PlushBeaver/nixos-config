@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
+  programs.steam.enable = true;
+
   environment.systemPackages = with pkgs; [
-    steam
     (steam.override {
       extraPkgs = pkgs: [
         mono
@@ -13,7 +14,5 @@
       ];
       nativeOnly = true;
     }).run
-
-    minecraft
   ];
 }
