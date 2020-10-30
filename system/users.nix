@@ -15,8 +15,5 @@
       "wheel"
       "wireshark"
     ];
-
-    subUidRanges = [{ startUid = 65536; count = 65535; }];
-    subGidRanges = [{ startGid = 65536; count = 65535; }];
   };
 }
