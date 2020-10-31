@@ -4,6 +4,7 @@
   networking = {
     hostName = "sovereign";
 
+    useNetworkd = true;
     useDHCP = false;
     interfaces = {
       enp4s4.useDHCP = false;
