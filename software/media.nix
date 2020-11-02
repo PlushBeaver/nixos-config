@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     geeqie
     imagemagick
-    #libreoffice-fresh -- not in cache, too slow to build
+    libreoffice-fresh
     mpv
     pasystray
     pavucontrol
