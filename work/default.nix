@@ -35,20 +35,26 @@ in {
   ];
 
   home-manager.users.dmitry = {
-    programs.git.includes =
-      let
-        dirs = [
-          "~/work/"
-          "~/go/src/${bifit.gitServer}/"
-        ];
-        user = {
-          email = "kozlyuk@bifit.com";
-          name = "Dmitry Kozlyuk";
-        };
-      in
-        lib.forEach dirs (dir: {
-          condition = "gitdir:${dir}";
-          contents = { inherit user; };
-        });
+    programs.git = {
+      extraConfig = {
+        "url \"ssh://git@${bifit.gitServer}:422\"".insteadOf = "https://${bifit.gitServer}";
+      };
+
+      includes =
+        let
+          dirs = [
+            "~/work/"
+            "~/go/src/${bifit.gitServer}/"
+          ];
+          user = {
+            email = "kozlyuk@bifit.com";
+            name = "Dmitry Kozlyuk";
+          };
+        in
+          lib.forEach dirs (dir: {
+            condition = "gitdir:${dir}";
+            contents = { inherit user; };
+          });
+    };
   };
 }
