@@ -51,6 +51,7 @@
       userEmail = "dmitry.kozliuk@gmail.com";
       extraConfig = {
         core = {
+          autocrlf = "input";
           quotePath = false;
         };
         sendemail = {
