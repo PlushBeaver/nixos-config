@@ -136,8 +136,9 @@
       workspaceLayout = "tabbed";
 
       startup = [
-        { command = "${pkgs.xxkb}/bin/xxkb &"; }
-        { command = "${pkgs.clipit}/bin/clipit &"; }
+        { always = true; command = "${pkgs.xxkb}/bin/xxkb"; }
+        { always = true; command = "${pkgs.clipit}/bin/clipit"; }
+        { always = true; command = "${pkgs.pasystray}/bin/pasystray"; }
       ];
 
       bars = [
