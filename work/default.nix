@@ -4,11 +4,6 @@ let
   bifit = inputs.secrets.work.bifit;
   docker = bifit.docker.registry;
 in {
-  services.dnsmasq = {
-    enable = true;
-    servers = bifit.dnsServers;
-  };
-
   environment.etc."/docker/certs.d/${docker.domain}/ca.crt".text = docker.rootCA;
 
   systemd.services.docker.environment = {
