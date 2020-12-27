@@ -1,8 +1,33 @@
-{ inputs, pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 
 {
   home-manager.users.dmitry = {
     home.stateVersion = "20.09";
+
+    xdg.mimeApps = {
+      enable = true;
+
+      associations.removed =
+        let
+          noCalibre =
+            let
+              mimeTypes = [
+                "application/pdf"
+                "application/vnd.oasis.opendocument.text"
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                "text/html"
+                "text/x-markdown"
+              ];
+              desktopFiles = [
+                "calibre-ebook-edit.desktop"
+                "calibre-ebook-viewer.desktop"
+                "calibre-gui.desktop"
+              ];
+            in
+              lib.zipAttrs (map (d: lib.genAttrs mimeTypes (_: d)) desktopFiles);
+        in
+          noCalibre;
+    };
 
     programs = {
       chromium = {

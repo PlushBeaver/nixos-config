@@ -16,6 +16,6 @@
     ledger
 
     # FIXME: aggressive file associations
-    #calibre
+    calibre
   ];
 }
