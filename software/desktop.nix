@@ -2,9 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    maim
+    rxvt-unicode
 
-    rxvt-unicode # TODO: weird behavior when reqired from i3.nix
+    flameshot
 
     xxkb
 

@@ -15,17 +15,6 @@
             pactl = verb: param: "exec --no-startup-id pactl ${verb} @DEFAULT_SINK@ ${param} && ${refresh}";
 
             rofi = mode: "exec ${pkgs.rofi}/bin/rofi -show ${mode}";
-
-            screenshot = { active ? false, selection ? false, toFile ? false, toClipboard ? false }:
-              let
-                given = cond: value: if cond then value else "";
-                activeOption = given active "-i \$(${pkgs.xdotool}/bin/xdotool getactivewindow)";
-                selectionOption = given selection "--select";
-                sourceOptions = "${activeOption} ${selectionOption}";
-                toClipboardOption = given toClipboard "| ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png";
-                toFileOption = given toFile "~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png";
-                targetOptions = "${toFileOption} ${toClipboardOption}";
-              in "exec maim ${sourceOptions} ${targetOptions}";
           };
 
           bindings =
@@ -60,12 +49,9 @@
               };
 
               screenshot = with commands; {
-                "Print"               = screenshot {                   toClipboard = true; };
-                "Mod1+Print"          = screenshot { active    = true; toClipboard = true; };
-                "Control+Print"       = screenshot { selection = true; toClipboard = true; };
-                "Shift+Print"         = screenshot {                   toFile      = true; };
-                "Shift+Mod1+Print"    = screenshot { active    = true; toFile      = true; };
-                "Shift+Control+Print" = screenshot { selection = true; toFile      = true; };
+                "Print"         = "exec ${pkgs.flameshot}/bin/flameshot --clipboard screen";
+                "Shift+Print"   = "exec ${pkgs.flameshot}/bin/flameshot --path \$HOME/Pictures/Screenshots/\$(date +%Y-%m-%d_%H-%M-%S_screen.png) screen";
+                "Control+Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
               };
 
               workspace = {
