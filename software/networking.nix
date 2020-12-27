@@ -12,8 +12,6 @@
     discord
     skype
     tdesktop
-    teams
-    zoom-us
 
     curl
     hping

@@ -11,8 +11,6 @@
     clipit
     xsel
 
-    xorg.xev
-    xorg.xprop
     xorg.xhost
 
     aspellDicts.ru
