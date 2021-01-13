@@ -23,8 +23,8 @@ with pkgs; (vscode-with-extensions.override {
 
         { name = "gitlens";
           publisher = "eamodio";
-          version = "11.1.3";
-          sha256 = "sha256-hqJg3jP4bbXU4qSJOjeKfjkPx61yPDMsQdSUVZObK/U=";
+          version = "10.2.1";
+          sha256 = "1bh6ws20yi757b4im5aa6zcjmsgdqxvr1rg86kfa638cd5ad1f97";
         }
 
         { name = "nix-ide";
