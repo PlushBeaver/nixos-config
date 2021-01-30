@@ -7,6 +7,8 @@
     posix_man_pages
     moreutils
 
+    git-crypt
+
     cmake
     gcc
     gdb
