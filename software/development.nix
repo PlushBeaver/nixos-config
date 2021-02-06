@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./vscode.nix ];
+
   # Things I do for love (c).
   environment.systemPackages = with pkgs; [
     man-pages
@@ -29,7 +31,6 @@
     jetbrains.pycharm-community
     jetbrains.webstorm
 
-    (import ./vscode.nix { inherit pkgs; })
     python3
     python37Packages.pylint
     python37Packages.rope
