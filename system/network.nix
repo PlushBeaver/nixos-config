@@ -12,6 +12,8 @@
     };
 
     firewall.enable = false;
+
+    wireguard.enable = true;
   };
 
   services.openssh.enable = true;
