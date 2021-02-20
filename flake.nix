@@ -3,7 +3,12 @@
 
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-20.09;
-    home.url = github:nix-community/home-manager;
+
+    home = {
+      url = github:nix-community/home-manager/release-20.09;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     secrets = {};
   };
 
