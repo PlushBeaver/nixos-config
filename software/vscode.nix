@@ -61,6 +61,13 @@
               version = "1.1.3";
               sha256 = "sha256-G8Z2Twe6dFe2fE2KUOb2FmzW0iagRsjxERQZI0vJqSs=";
             }
+
+            {
+              name = "restructuredtext";
+              publisher = "lextudio";
+              version = "143.0.0";
+              sha256 = "sha256-RUxdbSn3zhesFyCbaLpd9fHM9bLqOrVX1sPh2cabPmM=";
+            }
           ];
         in packaged ++ local;
       })
