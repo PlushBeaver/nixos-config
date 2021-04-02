@@ -28,6 +28,13 @@
             }
 
             {
+              publisher = "ms-vscode";
+              name = "cmake-tools";
+              version = "1.6.0";
+              sha256 = "sha256-vI36GI1J21T5Lg5YBm8zfyvgi0kYDwG2wCmXRT83a8g=";
+            }
+
+            {
               name = "gitlens";
               publisher = "eamodio";
               version = "10.2.1";
