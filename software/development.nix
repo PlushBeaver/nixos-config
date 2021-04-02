@@ -26,10 +26,7 @@
     grpcurl
     protobuf
 
-    jetbrains.clion
     jetbrains.goland
-    jetbrains.pycharm-community
-    jetbrains.webstorm
 
     python3
     python37Packages.pylint
