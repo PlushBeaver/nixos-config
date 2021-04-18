@@ -18,7 +18,6 @@
     meson
     ninja
 
-    dep
     easyjson
     go
     go-swagger
