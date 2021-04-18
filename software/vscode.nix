@@ -10,6 +10,7 @@
             ms-python.python
             ms-vscode-remote.remote-ssh
             ms-vscode.cpptools
+            vscodevim.vim
           ];
 
           local = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -18,13 +19,6 @@
               publisher = "asabil";
               version = "1.3.0";
               sha256 = "sha256-QMp3dEFx6Mu5pgzklylW6b/ugYbtbT/qz8IeeuzPZeA=";
-            }
-
-            {
-              name = "cmake-integration-vscode";
-              publisher = "go2sh";
-              version = "0.7.1";
-              sha256 = "0hzp4jwlam1dl9mhgnlbvjbhvsrzv02pcafl6imab12df42ln12q";
             }
 
             {
