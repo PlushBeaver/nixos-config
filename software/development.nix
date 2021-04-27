@@ -48,6 +48,9 @@
       ignores = ["/result"];
       userName = "Dmitry Kozlyuk";
       userEmail = "dmitry.kozliuk@gmail.com";
+      aliases = {
+        wipe = "!temp() { if [ -z \"$1\" ]; then exit 1; fi; git branch -D $1; git push origin :$1; }; temp";
+      };
       extraConfig = {
         core = {
           autocrlf = "input";
