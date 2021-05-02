@@ -12,6 +12,7 @@
     xsel
 
     xorg.xhost
+    xorg.xkill
 
     aspellDicts.ru
     aspellDicts.en
