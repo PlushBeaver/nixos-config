@@ -8,6 +8,7 @@
     man-pages
     posix_man_pages
     moreutils
+    openssl
 
     git-crypt
 
