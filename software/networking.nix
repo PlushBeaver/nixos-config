@@ -12,6 +12,7 @@ in {
     firefox
 
     discord
+    quassel
     skype
     unstable.tdesktop
 
