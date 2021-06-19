@@ -5,7 +5,7 @@
     enable = true;
     liveRestore = true;
     logDriver = "json-file";
-    storageDriver = "btrfs";
+    storageDriver = "overlay2";
 
     daemonConfig = {
       default-address-pools = [

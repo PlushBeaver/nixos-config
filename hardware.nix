@@ -27,7 +27,11 @@
         "/" = btrfs "@nixos";
         "/boot" = esp;
         "/home" = btrfs "@home";
-        "/var/lib/docker" = btrfs "@docker";
+        "/var/lib/docker" = {
+          device = "/dev/disk/by-uuid/ac7a1122-1545-445d-97e5-32830c3f9c01";
+          fsType = "ext4";
+          options = ["noatime"];
+        };
         "/tmp" = tmpfs;
     };
 
