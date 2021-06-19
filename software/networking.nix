@@ -8,6 +8,11 @@ in {
       enableSpellcheck = true;
     })
 
+    ((emacsPackagesGen emacs).emacsWithPackages (epkgs:
+      with epkgs.melpaPackages; [
+        elfeed
+      ]))
+
     chromium
     firefox
 
