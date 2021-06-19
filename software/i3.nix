@@ -118,7 +118,11 @@
           (workspace 2 "TelegramDesktop")
         ];
 
-      fonts = ["sans-serif 8"];
+      fonts = {
+        names = ["sans-serif"];
+        size = 8.0;
+      };
+
       workspaceLayout = "tabbed";
 
       startup = [
@@ -129,7 +133,10 @@
 
       bars = [
         {
-          fonts = ["iosevka 10"];
+          fonts = {
+            names = ["iosevka"];
+            size = 10.0;
+          };
           statusCommand = "env LC_ALL=ru_RU.UTF-8 i3status";
           trayOutput = "DP-0";
         }

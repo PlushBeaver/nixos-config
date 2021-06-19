@@ -1,8 +1,6 @@
 { inputs, pkgs, ... }:
 
-let
-  unstable = inputs.unstable.legacyPackages.x86_64-linux;
-in {
+{
   environment.systemPackages = with pkgs; [
     (claws-mail.override {
       enableSpellcheck = true;
@@ -19,7 +17,7 @@ in {
     discord
     quassel
     skype
-    unstable.tdesktop
+    tdesktop
 
     curl
     hping

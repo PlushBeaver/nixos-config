@@ -29,8 +29,6 @@
     xkbModel = "pc105";
     xkbOptions = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
 
-    startDbusSession = true;
-
     displayManager.sddm.enable = true;
     windowManager.i3.enable = true;
   };
