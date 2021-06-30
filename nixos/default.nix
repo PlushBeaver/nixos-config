@@ -1,18 +1,17 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [
-    ./modules/docker.nix
-  ];
+  imports = [ ./modules/docker.nix ];
 
   nix = {
     autoOptimiseStore = true;
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixFlakes;
-    registry = {
-      nixpkgs.flake = inputs.nixpkgs;
+    registry = with inputs; {
+      nixpkgs.flake = nixpkgs;
+      self.flake = self;
     };
-    trustedUsers = ["root" "@wheel"];
+    trustedUsers = [ "root" "@wheel" ];
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
