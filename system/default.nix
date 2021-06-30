@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
-{
+let
+  nicReloadScript = pkgs.writeScriptBin "nic-reload" ''
+    #!${pkgs.stdenv.shell}
+    echo 1 > /sys/bus/pci/devices/0000:04:04.0/remove
+    echo 1 > /sys/bus/pci/devices/0000:05:05.0/remove
+    sleep 1
+    echo 1 > /sys/bus/pci/rescan
+  '';
+in {
   imports = [
     ./home-manager.nix
     ./network.nix
@@ -31,13 +39,10 @@
     RuntimeMaxUse=64M
     '';
 
-  environment.systemPackages = [
-    (pkgs.writeScriptBin "nic-reload" ''
-        #!${pkgs.stdenv.shell}
-        echo 1 > /sys/bus/pci/devices/0000:04:04.0/remove
-        echo 1 > /sys/bus/pci/devices/0000:05:05.0/remove
-        sleep 1
-        echo 1 > /sys/bus/pci/rescan
-      '')
-    ];
+  environment.systemPackages = [ nicReloadScript ];
+
+  systemd.services.nic-reload = {
+    after = [ "hibernate.target" ];
+    script = "${nicReloadScript}/bin/nic-reload";
+  };
 }
