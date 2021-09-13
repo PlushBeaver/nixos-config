@@ -13,7 +13,13 @@
     };
 
     fonts = with pkgs; [
-      iosevka
+      (iosevka.override {
+        privateBuildPlan = {
+          family = "Iosevka";
+          spacing = "term";
+        };
+        set = "term";
+       })
 
       liberation_ttf
 
