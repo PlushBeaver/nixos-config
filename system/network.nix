@@ -6,14 +6,9 @@
 
     useNetworkd = true;
     useDHCP = false;
-    interfaces = {
-      #enp4s4.useDHCP = false;
-      enp5s5.useDHCP = true;
-    };
+    interfaces = { enp5s5.useDHCP = true; };
 
     firewall.enable = false;
-
-    wireguard.enable = true;
   };
 
   services.openssh.enable = true;
@@ -21,5 +16,14 @@
 
   programs.wireshark.enable = true;
 
-  services.openvpn.servers.rho.config = inputs.secrets.vpnConfig;
+  networking.wireguard.enable = true;
+  networking.wireguard.interfaces."wg0" = let wg = inputs.secrets.wireguard;
+  in {
+    ips = [ "10.8.0.2/30" ];
+    inherit (wg) privateKey;
+    peers = [{
+      inherit (wg) endpoint publicKey;
+      allowedIPs = [ "10.8.0.1/32" ];
+    }];
+  };
 }
