@@ -25,6 +25,7 @@
 
     videoDrivers = ["nvidia"];
 
+    # FIXME: stopped working :(
     layout = "us,ru";
     xkbModel = "pc105";
     xkbOptions = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
@@ -37,6 +38,7 @@
     enable = true;
     initExtra = ''
       xrdb -merge -override .Xresources
+      setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt -model pc105
 
       firefox &
       telegram-desktop &
