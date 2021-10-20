@@ -28,7 +28,7 @@
 
     jetbrains.goland
 
-    python3
+    (python3.withPackages (pkgs: [pkgs.tkinter]))
     python37Packages.pylint
     python37Packages.rope
 
