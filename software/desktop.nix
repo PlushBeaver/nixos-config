@@ -18,7 +18,11 @@
     aspellDicts.en
     aspellDicts.en-computers
     aspellDicts.en-science
+
+    teamviewer
   ];
+
+  services.teamviewer.enable = true;
 
   services.xserver = {
     enable = true;
