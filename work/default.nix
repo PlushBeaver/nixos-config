@@ -4,6 +4,8 @@ let
   bifit = inputs.secrets.work.bifit;
   registry = bifit.docker.registry.domain;
 in {
+  imports = [ ./mpei.nix ];
+
   systemd.services.docker.environment = {
     GODEBUG = "x509ignoreCN=0";
   };

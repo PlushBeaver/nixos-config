@@ -50,6 +50,7 @@
         (ethernet "IP" "enp5s5")
         (ethernet "VPN" "tun0")
         (ethernet "BIFIT" "bifit")
+        (ethernet "MPEI" "mpei")
         load
         memory
         time
