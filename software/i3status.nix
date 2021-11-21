@@ -48,7 +48,7 @@
       modules = lib.mkMerge (withPositions [
         (disk "/")
         (ethernet "IP" "enp5s5")
-        (ethernet "VPN" "tun0")
+        (ethernet "VPN" "wg0")
         (ethernet "BIFIT" "bifit")
         (ethernet "MPEI" "mpei")
         load
