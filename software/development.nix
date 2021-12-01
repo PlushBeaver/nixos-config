@@ -12,21 +12,14 @@
 
     git-crypt
 
-    cmake
     gcc
     gdb
-    gnumake
-    meson
-    ninja
 
-    easyjson
     go
-    go-swagger
-    grpc
-    grpcurl
-    protobuf
-
     jetbrains.goland
+
+    protobuf
+    grpcurl
 
     (python3.withPackages (pkgs: [pkgs.tkinter]))
     python37Packages.pylint

@@ -15,7 +15,6 @@
     firefox
 
     discord
-    quassel
     skype
     tdesktop
 
