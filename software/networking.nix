@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (claws-mail.override {
+    (claws-mail-gtk2.override {
       enableSpellcheck = true;
     })
 

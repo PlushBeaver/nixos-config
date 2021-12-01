@@ -11,6 +11,7 @@
             ms-vscode-remote.remote-ssh
             ms-vscode.cpptools
             vscodevim.vim
+            golang.go
           ];
 
           local = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -47,13 +48,6 @@
               publisher = "arrterian";
               version = "0.1.2";
               sha256 = "sha256-aTNxr1saUaN9I82UYCDsQvH9UBWjue/BSnUmMQOnsdg=";
-            }
-
-            {
-              name = "Go";
-              publisher = "golang";
-              version = "0.20.1";
-              sha256 = "sha256-UjGaePjYceLdkf2yrxkVy6ht2aStJ5wklguKe/Z8HUI=";
             }
 
             {

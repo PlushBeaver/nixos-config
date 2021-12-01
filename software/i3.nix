@@ -1,6 +1,12 @@
 { lib, pkgs, ... }:
 
 {
+  home-manager.users.dmitry.programs.rofi = {
+    enable = true;
+    theme = "android_notification";
+    font = "Iosevka Light 24";
+  };
+
   home-manager.users.dmitry.xsession.windowManager.i3 = {
     enable = true;
 
