@@ -9,7 +9,7 @@
     xxkb
 
     clipit
-    xsel
+    xclip
 
     xorg.xhost
     xorg.xkill
