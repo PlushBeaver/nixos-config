@@ -45,4 +45,6 @@ in {
     after = [ "hibernate.target" ];
     script = "${nicReloadScript}/bin/nic-reload";
   };
+
+  virtualisation.lxc.enable = true;
 }

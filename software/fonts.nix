@@ -1,14 +1,15 @@
 { pkgs, ... }:
 
 {
-  fonts = {
+  fonts = let def = "Iosevka Light";
+  in {
     enableDefaultFonts = true;
 
     fontconfig = {
       defaultFonts = {
-        serif = ["PT Serif"];
-        sansSerif = ["PT Sans"];
-        monospace = ["PT Mono"];
+        serif = [ def ];
+        sansSerif = [ def ];
+        monospace = [ def ];
       };
     };
 
@@ -19,9 +20,7 @@
           spacing = "term";
         };
         set = "term";
-       })
-
-      liberation_ttf
+      })
 
       noto-fonts
       noto-fonts-cjk
