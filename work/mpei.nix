@@ -28,4 +28,10 @@
     path = with pkgs; [ iproute2 vpnc ];
     script = "${pkgs.vpnc}/bin/vpnc ${config}";
   };
+
+  environment.systemPackages = with pkgs; [
+    R
+    octave
+    turbovnc
+  ];
 }
