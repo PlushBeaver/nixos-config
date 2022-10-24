@@ -18,6 +18,8 @@
       ipv6 = true;
       fixed-cidr-v6 = "2001:db8:1::/64";
 
+      dns = ["172.17.0.1"];
+
       log-opts = {
         max-file = "2";
         max-size = "50m";
