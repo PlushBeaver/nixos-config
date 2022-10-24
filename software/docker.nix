@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   virtualisation.docker = {
     enable = true;
     liveRestore = true;
     logDriver = "json-file";
+    package = inputs.nixpkgs-2205.legacyPackages.x86_64-linux.docker;
     storageDriver = "overlay2";
 
     daemonConfig = {
