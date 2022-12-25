@@ -42,10 +42,17 @@
           vscodevim.vim
         ];
       };
+      pythonTools = python3.withPackages (pkgs: with pkgs; [
+        black
+        pylint
+        yapf
+        rope
+      ]);
     in [
       clang_14 # C/C++ LS
       docutils # reStructuredText LS
       gopls # Go LS
+      pythonTools
       vscode
     ];
 }
