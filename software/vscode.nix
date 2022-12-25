@@ -49,7 +49,7 @@
         rope
       ]);
     in [
-      clang_14 # C/C++ LS
+      clang-tools_14 # C/C++ LS
       docutils # reStructuredText LS
       gopls # Go LS
       pythonTools
