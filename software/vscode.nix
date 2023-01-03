@@ -25,6 +25,12 @@
             version = "0.2.1";
             sha256 = "sha256-kvWaSuE4O98fXU+EKkplFI0Cfy2I7IiJ0/hXrVsk+6g=";
           };
+          zxh404.vscode-proto3 = mk {
+            publisher = "zxh404";
+            name = "vscode-proto3";
+            version = "0.5.5";
+            sha256 = "sha256-Em+w3FyJLXrpVAe9N7zsHRoMcpvl+psmG1new7nA8iE=";
+          };
         in with vscode-extensions; [
           arrterian.nix-env-selector
           eamodio.gitlens
@@ -40,6 +46,7 @@
           timonwong.shellcheck
           trond-snekvik.simple-rst
           vscodevim.vim
+          zxh404.vscode-proto3
         ];
       };
       pythonTools = python3.withPackages (pkgs: with pkgs; [
