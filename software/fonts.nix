@@ -1,31 +1,19 @@
 { pkgs, ... }:
 
 {
-  fonts = let def = "Iosevka Light";
-  in {
+  fonts = {
     enableDefaultFonts = true;
 
     fontconfig = {
-      defaultFonts = {
-        serif = [ def ];
-        sansSerif = [ def ];
-        monospace = [ def ];
+      defaultFonts = with pkgs; {
+        serif = [ "PT Serif" ];
+        sansSerif = [ "PT Sans" ];
+        monospace = [ "PT Mono" ];
       };
     };
 
     fonts = with pkgs; [
-      (iosevka.override {
-        privateBuildPlan = {
-          family = "Iosevka";
-          spacing = "term";
-        };
-        set = "term";
-      })
-
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-
+      iosevka-bin
       paratype-pt-mono
       paratype-pt-sans
       paratype-pt-serif

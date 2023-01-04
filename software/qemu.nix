@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kvm
+    qemu_kvm
     qemu-utils
     (qemu.override { hostCpuOnly = true; })
     freerdp

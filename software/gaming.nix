@@ -12,7 +12,6 @@
         libgdiplus
         zlib
       ];
-      nativeOnly = true;
     }).run
   ];
 }

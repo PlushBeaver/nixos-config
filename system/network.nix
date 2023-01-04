@@ -11,6 +11,10 @@
     firewall.enable = false;
   };
 
+  services.resolved.extraConfig = ''
+    DNSStubListenerExtra=172.17.0.1
+  '';
+
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
 

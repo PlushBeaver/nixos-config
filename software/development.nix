@@ -16,17 +16,10 @@
     gdb
 
     go
-    jetbrains.goland
-
-    protobuf
     grpcurl
+    protobuf
 
     (python3.withPackages (pkgs: [pkgs.tkinter]))
-    python37Packages.pylint
-    python37Packages.rope
-
-    ansible_2_9
-    docker-compose
 
     nixfmt
 

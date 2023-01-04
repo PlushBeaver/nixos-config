@@ -6,11 +6,7 @@ let
 in {
   imports = [ ./mpei.nix ];
 
-  systemd.services.docker.environment = {
-    GODEBUG = "x509ignoreCN=0";
-  };
-
-  virtualisation.docker.daemonConfig = {
+  virtualisation.docker.daemon.settings = {
     insecure-registries = [ registry ];
   };
 
@@ -29,6 +25,8 @@ in {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "offload-tcp" (builtins.readFile ./offload-tcp.sh))
     (writeShellScriptBin "netns-setup-reverse" (builtins.readFile ./netns-setup-reverse.sh))
+    docker-compose_1
+    inputs.nixpkgs-2111.legacyPackages.x86_64-linux.ansible_2_9
   ];
 
   home-manager.users.dmitry = {

@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages =
-    with inputs.nixpkgs-2205.legacyPackages.x86_64-linux;
+    with pkgs;
     let
       vscode = vscode-with-extensions.override {
         vscodeExtensions = let

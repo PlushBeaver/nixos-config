@@ -15,8 +15,9 @@
     traceroute
     usbutils
 
-    unzip
+    p7zip
     unrar
+    unzip
     zip
 
     btrfs-progs

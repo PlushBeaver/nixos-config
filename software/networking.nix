@@ -2,27 +2,24 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (claws-mail-gtk2.override {
-      enableSpellcheck = true;
-    })
+    (with inputs.nixpkgs-2111.legacyPackages.x86_64-linux;
+      claws-mail-gtk2.override { enableSpellcheck = true; })
 
-    ((emacsPackagesGen emacs).emacsWithPackages (epkgs:
-      with epkgs.melpaPackages; [
-        elfeed
-      ]))
+    ((emacsPackagesFor emacs).emacsWithPackages
+      (epkgs: with epkgs.melpaPackages; [ elfeed ]))
 
     chromium
     firefox
 
     discord
-    skype
+    skypeforlinux
     tdesktop
 
     curl
     hping
     httpie
     iptables
-    ncat
+    nmap
     qbittorrent
     socat
     wget

@@ -8,7 +8,6 @@
     mpv
     pasystray
     pavucontrol
-    qpdfview
     smplayer
     xarchiver
 
