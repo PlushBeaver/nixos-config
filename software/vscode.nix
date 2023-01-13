@@ -31,7 +31,14 @@
             version = "0.5.5";
             sha256 = "sha256-Em+w3FyJLXrpVAe9N7zsHRoMcpvl+psmG1new7nA8iE=";
           };
+          _42crunch.vscode-openapi = mk {
+            publisher = "42crunch";
+            name = "vscode-openapi";
+            version = "4.15.11";
+            sha256 = "sha256-T0In0lvHZfEelW2vgAZwt9wcD3RYPoB610v+9NHH8dY=";
+          };
         in with vscode-extensions; [
+          _42crunch.vscode-openapi
           arrterian.nix-env-selector
           eamodio.gitlens
           editorconfig.editorconfig
@@ -43,6 +50,7 @@
           ms-python.python
           ms-python.vscode-pylance
           ms-vscode-remote.remote-ssh
+          redhat.vscode-yaml
           timonwong.shellcheck
           trond-snekvik.simple-rst
           vscodevim.vim
