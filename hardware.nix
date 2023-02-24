@@ -14,25 +14,28 @@
         fsType = "btrfs";
         options = ["noatime" "subvol=${subvol}"];
       };
-      esp = {
-        device = "/dev/disk/by-uuid/4387-B2FA";
-        fsType = "vfat";
-      };
-      tmpfs = {
-        device = "none";
-        fsType = "tmpfs";
-        options = ["noatime"];
-      };
-      in {
+    in {
         "/" = btrfs "@nixos";
-        "/boot" = esp;
+        "/boot" = {
+          device = "/dev/disk/by-uuid/4387-B2FA";
+          fsType = "vfat";
+        };
         "/home" = btrfs "@home";
-        "/var/lib/docker" = {
+        "/mnt/ext4" = {
           device = "/dev/disk/by-uuid/ac7a1122-1545-445d-97e5-32830c3f9c01";
           fsType = "ext4";
-          options = ["noatime"];
+          options = [ "noatime" ];
         };
-        "/tmp" = tmpfs;
+        "/var/lib/docker" = {
+          depends = "/mnt/ext4";
+          device = "/mnt/ext4/var/lib/docker";
+          options = [ "bind" ];
+        };
+        "/tmp" = {
+          device = "none";
+          fsType = "tmpfs";
+          options = [ "noatime" ];
+        };
     };
 
   swapDevices = [

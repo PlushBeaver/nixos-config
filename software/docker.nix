@@ -1,6 +1,11 @@
 { inputs, pkgs, ... }:
 
 {
+  systemd.services.docker = {
+    requires = [ "var-lib-docker.mount" ];
+    after = [ "var-lib-docker.mount" ];
+  };
+
   virtualisation.docker = {
     enable = true;
     liveRestore = true;
