@@ -50,9 +50,11 @@
           ms-python.python
           ms-python.vscode-pylance
           ms-vscode-remote.remote-ssh
+          ms-vscode.cmake-tools
           redhat.vscode-yaml
           timonwong.shellcheck
           trond-snekvik.simple-rst
+          twxs.cmake
           vscodevim.vim
           zxh404.vscode-proto3
         ];
