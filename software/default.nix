@@ -13,6 +13,7 @@
     ./i3status.nix
     ./media.nix
     ./networking.nix
+    ./shell.nix
     ./qemu.nix
     ./vim.nix
   ];
