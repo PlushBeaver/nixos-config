@@ -17,9 +17,9 @@
     '';
     script = pkgs.writeShellScript "vpnc-mpei-script" ''
       #!/usr/bin/env -S sh -eu
+      ${pkgs.vpnc-scripts}/bin/vpnc-script
       ${pkgs.systemd}/bin/resolvectl domain ${iface} $CISCO_DEF_DOMAIN
       ${pkgs.systemd}/bin/resolvectl dns ${iface} $INTERNAL_IP4_DNS $INTERNAL_IP6_DNS
-      exec ${pkgs.vpnc-scripts}/bin/vpnc-script
     '';
   in {
     enable = true;
