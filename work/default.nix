@@ -2,12 +2,12 @@
 
 let
   bifit = inputs.secrets.work.bifit;
-  registry = bifit.docker.registry.domain;
+  registry = lib.elemAt bifit.docker.registry.domains 0;
 in {
   imports = [ ./mpei.nix ];
 
   virtualisation.docker.daemon.settings = {
-    insecure-registries = [ registry ];
+    insecure-registries = bifit.docker.registry.domains;
   };
 
   virtualisation.oci-containers.containers."docker-veth-pair-plugin" = {
