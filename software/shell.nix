@@ -1,7 +1,7 @@
 { ... }: {
   home-manager.users."dmitry" = {
     home.shellAliases = {
-      "dc" = "docker-compose";
+      "dc" = "docker compose";
       "gco" = "git checkout";
       "gf" = "git fetch";
       "gl" = "git pull";
