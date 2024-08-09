@@ -64,8 +64,8 @@
     },
     "secrets": {
       "locked": {
-        "lastModified": 1719493503,
-        "narHash": "sha256-XGj4B3EZmhmY+UiOXonZbVfaoRmP4IQsXy14Io4CSgQ=",
+        "lastModified": 1723215057,
+        "narHash": "sha256-SvtjvrbNzh3MZvr2/qR+tASZIvokVWMTbVlaKIGhNNQ=",
         "path": "/home/dmitry/src/secrets.nix",
         "type": "path"
       },
