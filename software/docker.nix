@@ -8,6 +8,7 @@
 
   virtualisation.docker = {
     enable = true;
+    package = inputs.nixpkgs-2405.legacyPackages.x86_64-linux.docker;
     liveRestore = true;
     logDriver = "json-file";
     storageDriver = "overlay2";
