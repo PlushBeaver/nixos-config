@@ -7,6 +7,7 @@
     registry = with inputs; {
       nixpkgs.flake = nixpkgs;
       nixpkgs-2111.flake = nixpkgs-2111;
+      nixpkgs-2405.flake = nixpkgs-2405;
       home-manager.flake = home-manager;
       self.flake = self;
     };
