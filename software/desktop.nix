@@ -18,6 +18,8 @@
     aspellDicts.en
     aspellDicts.en-computers
     aspellDicts.en-science
+
+    otpclient
   ];
 
   services.xserver = {

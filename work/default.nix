@@ -25,14 +25,16 @@ in {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "offload-tcp" (builtins.readFile ./offload-tcp.sh))
     (writeShellScriptBin "netns-setup-reverse" (builtins.readFile ./netns-setup-reverse.sh))
+    (writeShellScriptBin "update-systemd-resolved" "exec ${pkgs.update-systemd-resolved}/libexec/openvpn/update-systemd-resolved \"$@\"")
     docker-compose_1
     inputs.nixpkgs-2111.legacyPackages.x86_64-linux.ansible_2_9
+    openvpn
   ];
 
   home-manager.users.dmitry = {
     programs.git = {
       extraConfig = {
-        "url \"ssh://git@${bifit.gitServer}:422\"".insteadOf = "https://${bifit.gitServer}";
+        "url \"ssh://git@${bifit.gitServer}:422\"".insteadOf = [ "https://${bifit.gitServer}" "git://${bifit.gitServer}" ];
       };
 
       includes =
