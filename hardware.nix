@@ -31,6 +31,11 @@
           device = "/mnt/ext4/var/lib/docker";
           options = [ "bind" ];
         };
+        "/mnt/storage" = {
+          device = "/dev/disk/by-uuid/ddb45a85-2494-4de3-9515-26a75578e7d8";
+          fsType = "btrfs";
+          options = [ "rw" "noatime" "autodefrag" "compress-force=zstd" "nossd" "space_cache=v2" ];
+        };
         "/tmp" = {
           device = "none";
           fsType = "tmpfs";
