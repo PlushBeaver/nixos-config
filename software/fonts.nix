@@ -14,6 +14,7 @@
 
     fonts = with pkgs; [
       iosevka-bin
+      noto-fonts-cjk
       paratype-pt-mono
       paratype-pt-sans
       paratype-pt-serif
