@@ -8,6 +8,7 @@
       nixpkgs.flake = nixpkgs;
       nixpkgs-2111.flake = nixpkgs-2111;
       nixpkgs-2405.flake = nixpkgs-2405;
+      nixpkgs-2411.flake = nixpkgs-2411;
       home-manager.flake = home-manager;
       self.flake = self;
     };
