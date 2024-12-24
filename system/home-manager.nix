@@ -12,32 +12,28 @@
         "x-scheme-handler/https" = "firefox.desktop";
       };
 
-      associations.removed =
-        let
-          noCalibre =
-            let
-              mimeTypes = [
-                "application/pdf"
-                "application/vnd.oasis.opendocument.text"
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                "text/html"
-                "text/x-markdown"
-              ];
-              desktopFiles = [
-                "calibre-ebook-edit.desktop"
-                "calibre-ebook-viewer.desktop"
-                "calibre-gui.desktop"
-              ];
-            in
-              lib.zipAttrs (map (d: lib.genAttrs mimeTypes (_: d)) desktopFiles);
-        in
-          noCalibre;
+      associations.removed = let
+        noCalibre = let
+          mimeTypes = [
+            "application/pdf"
+            "application/vnd.oasis.opendocument.text"
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            "text/html"
+            "text/x-markdown"
+          ];
+          desktopFiles = [
+            "calibre-ebook-edit.desktop"
+            "calibre-ebook-viewer.desktop"
+            "calibre-gui.desktop"
+          ];
+        in lib.zipAttrs (map (d: lib.genAttrs mimeTypes (_: d)) desktopFiles);
+      in noCalibre;
     };
 
+    home.sessionVariables = { BUILDKIT_NO_CLIENT_TOKEN = "true"; };
+
     programs = {
-      chromium = {
-        enable = true;
-      };
+      chromium = { enable = true; };
 
       firefox = {
         enable = true;
