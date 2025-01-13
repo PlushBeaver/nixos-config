@@ -5,8 +5,8 @@
       "gco" = "git checkout";
       "gf" = "git fetch";
       "gl" = "git pull";
-      "glol" = "git log --graph --oneline --decorate";
-      "glola" = "git log --graph --oneline --decorate --all";
+      "glol" = "git log --graph --oneline --format='format:%C(auto)%h %C(cyan)%cs %C(auto)%s%d'";
+      "glola" = "git log --all --graph --oneline --format='format:%C(auto)%h %C(cyan)%cs %C(auto)%s%d'";
       "gst" = "git status";
       "gsta" = "git stash save";
       "gstp" = "git stash pop";
