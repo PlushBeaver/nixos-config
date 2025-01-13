@@ -39,6 +39,10 @@ in {
 
   services.devmon.enable = true;
 
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   services.journald.extraConfig = ''
     Storage=volatile
     SystemMaxUse=64M
