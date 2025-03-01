@@ -31,7 +31,8 @@
     inherit (wg) privateKey;
     peers = [{
       inherit (wg) endpoint publicKey;
-      allowedIPs = [ "10.8.0.1/32" ];
+      allowedIPs = [ "0.0.0.0/0" ];
     }];
+    allowedIPsAsRoutes = false;
   };
 }
