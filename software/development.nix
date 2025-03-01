@@ -1,12 +1,13 @@
-{ pkgs, ... }:
+{ inputs, ... }:
 
-{
+let pkgs = inputs.nixpkgs-2411.legacyPackages.x86_64-linux;
+in {
   imports = [ ./vscode.nix ];
 
   # Things I do for love (c).
   environment.systemPackages = with pkgs; [
     man-pages
-    posix_man_pages
+    man-pages-posix
     moreutils
     openssl
 
@@ -21,7 +22,7 @@
 
     (python3.withPackages (pkgs: [pkgs.tkinter]))
 
-    nixfmt
+    nixfmt-rfc-style
 
     pandoc
     plantuml
