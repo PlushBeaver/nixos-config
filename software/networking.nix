@@ -9,7 +9,9 @@
       (epkgs: with epkgs.melpaPackages; [ elfeed ]))
 
     chromium
-    firefox
+
+    (with inputs.nixpkgs-2411.legacyPackages.x86_64-linux;
+      firefox)
 
     discord
     skypeforlinux

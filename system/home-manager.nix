@@ -37,6 +37,7 @@
 
       firefox = {
         enable = true;
+        package = inputs.nixpkgs-2411.legacyPackages.x86_64-linux.firefox;
         profiles = {
           default = {
             id = 0;
