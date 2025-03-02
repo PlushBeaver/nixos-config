@@ -33,7 +33,10 @@
     home.sessionVariables = { BUILDKIT_NO_CLIENT_TOKEN = "true"; };
 
     programs = {
-      chromium = { enable = true; };
+      chromium = {
+        package = inputs.nixpkgs-2411.legacyPackages.x86_64-linux.chromium;
+        enable = true;
+      };
 
       firefox = {
         enable = true;
