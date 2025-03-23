@@ -3,11 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     geeqie
-    imagemagick
     libreoffice-fresh
     mpv
-    pasystray
-    pavucontrol
+    pw-volume
+    pwvucontrol
     smplayer
     xarchiver
 

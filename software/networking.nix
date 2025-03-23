@@ -1,26 +1,22 @@
 { inputs, pkgs, ... }:
 
 {
-  environment.systemPackages = with inputs.nixpkgs-2411.legacyPackages.x86_64-linux; [
-    (with inputs.nixpkgs-2111.legacyPackages.x86_64-linux;
-      claws-mail-gtk2.override { enableSpellcheck = true; })
-
+  environment.systemPackages = with pkgs; [
     ((emacsPackagesFor emacs).emacsWithPackages
       (epkgs: with epkgs.melpaPackages; [ elfeed ]))
 
-    chromium
-    firefox
+    qbittorrent
 
     tdesktop
+
+    wireshark-qt
 
     curl
     hping
     httpie
     iptables
     nmap
-    qbittorrent
     socat
     wget
-    wireshark-qt
   ];
 }

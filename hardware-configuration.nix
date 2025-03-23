@@ -27,7 +27,7 @@
           options = [ "noatime" ];
         };
         "/var/lib/docker" = {
-          depends = "/mnt/ext4";
+          depends = [ "/mnt/ext4" ];
           device = "/mnt/ext4/var/lib/docker";
           options = [ "bind" ];
         };
@@ -50,9 +50,8 @@
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
   console.keyMap = "ru";
 
-  environment.systemPackages = [pkgs.linuxPackages.nvidia_x11];
+  environment.systemPackages = [ pkgs.linuxPackages.nvidia_x11 ];
+  hardware.nvidia.open = false;
 
-  hardware.pulseaudio.enable = true;
-  hardware.opengl.extraPackages32 = [pkgs.pkgsi686Linux.libva];
-  sound.enable = true;
+  hardware.graphics.extraPackages32 = [ pkgs.pkgsi686Linux.libva ];
 }

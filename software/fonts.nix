@@ -2,7 +2,7 @@
 
 {
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
 
     fontconfig = {
       defaultFonts = with pkgs; {
@@ -12,9 +12,9 @@
       };
     };
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       iosevka-bin
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       paratype-pt-mono
       paratype-pt-sans
       paratype-pt-serif
