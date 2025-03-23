@@ -28,13 +28,13 @@
     videoDrivers = ["nvidia"];
 
     # FIXME: stopped working :(
-    layout = "us,ru";
-    xkbModel = "pc105";
-    xkbOptions = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
+    xkb.layout = "us,ru";
+    xkb.model = "pc105";
+    xkb.options = "grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt";
 
-    displayManager.sddm.enable = true;
     windowManager.i3.enable = true;
   };
+  services.displayManager.sddm.enable = true;
 
   home-manager.users.dmitry.xsession = {
     enable = true;
@@ -43,8 +43,9 @@
       setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps,grp_led:scroll,compose:ralt -model pc105
 
       firefox &
+      pasystray &
       telegram-desktop &
-      claws-mail &
+      thunderbird &
       '';
   };
 }

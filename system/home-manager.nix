@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, ... }:
 
 {
+  home-manager.backupFileExtension = "backup";
   home-manager.users.dmitry = {
     home.stateVersion = "20.09";
 
@@ -33,14 +34,15 @@
     home.sessionVariables = { BUILDKIT_NO_CLIENT_TOKEN = "true"; };
 
     programs = {
-      chromium = {
-        package = inputs.nixpkgs-2411.legacyPackages.x86_64-linux.chromium;
+      chromium.enable = true;
+
+      thunderbird = {
         enable = true;
+        profiles.default.isDefault = true;
       };
 
       firefox = {
         enable = true;
-        package = inputs.nixpkgs-2411.legacyPackages.x86_64-linux.firefox;
         profiles = {
           default = {
             id = 0;

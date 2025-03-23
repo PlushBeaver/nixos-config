@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ ... }:
 
 {
   systemd.services.docker = {
@@ -8,7 +8,6 @@
 
   virtualisation.docker = {
     enable = true;
-    package = inputs.nixpkgs-2411.legacyPackages.x86_64-linux.docker;
     liveRestore = true;
     logDriver = "json-file";
     storageDriver = "overlay2";

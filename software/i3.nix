@@ -118,10 +118,9 @@
           };
         in [
           (workspace 1 "Firefox")
-          (workspace 2 "Claws-mail")
-          (workspace 2 "discord")
-          (workspace 2 "Liferea")
+          (workspace 2 "Thunderbird")
           (workspace 2 "TelegramDesktop")
+          (workspace 5 "discord")
         ];
 
       fonts = {

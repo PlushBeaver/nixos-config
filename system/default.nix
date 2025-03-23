@@ -41,6 +41,7 @@ in {
 
   services.flatpak.enable = true;
   xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.journald.extraConfig = ''
@@ -50,11 +51,4 @@ in {
     '';
 
   environment.systemPackages = [ nicReloadScript ];
-
-  systemd.services.nic-reload = {
-    after = [ "hibernate.target" ];
-    script = "${nicReloadScript}/bin/nic-reload";
-  };
-
-  virtualisation.lxc.enable = true;
 }

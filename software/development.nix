@@ -1,7 +1,6 @@
-{ inputs, ... }:
+{ pkgs, ... }:
 
-let pkgs = inputs.nixpkgs-2411.legacyPackages.x86_64-linux;
-in {
+{
   imports = [ ./vscode.nix ];
 
   # Things I do for love (c).
@@ -15,6 +14,7 @@ in {
 
     gcc
     gdb
+    gnumake
 
     go
     grpcurl

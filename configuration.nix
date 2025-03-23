@@ -1,14 +1,18 @@
-{ inputs, pkgs, ... }:
+{ inputs, self, ... }:
 
 {
+  imports = [
+    ./hardware-configuration.nix
+    ./system
+    ./software
+    (if inputs.secrets.work.enable then ./work else [])
+  ];
+
   nix = {
     extraOptions = "experimental-features = nix-command flakes";
-    package = pkgs.nixFlakes;
-    registry = with inputs; {
-      nixpkgs.flake = nixpkgs;
-      nixpkgs-2111.flake = nixpkgs-2111;
-      nixpkgs-2411.flake = nixpkgs-2411;
-      home-manager.flake = home-manager;
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs;
+      home-manager.flake = inputs.home-manager;
       self.flake = self;
     };
     settings = {

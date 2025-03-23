@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 {
-  programs.vim.defaultEditor = true;
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
 
   home-manager.users.dmitry.programs.neovim =
     let
@@ -25,6 +26,7 @@
       };
     in {
       enable = true;
+      defaultEditor = true;
 
       viAlias = true;
       vimAlias = true;
