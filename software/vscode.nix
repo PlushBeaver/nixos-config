@@ -20,6 +20,18 @@
               version = "0.2.1";
               sha256 = "sha256-kvWaSuE4O98fXU+EKkplFI0Cfy2I7IiJ0/hXrVsk+6g=";
             };
+            streetsidesoftware.code-spell-checker = mk {
+              publisher = "streetsidesoftware";
+              name = "code-spell-checker";
+              version = "4.0.47";
+              sha256 = "sha256-g9r8I909ge44JfBRm1JBHFluXr9H8zl0ERqkwoxtQaI=";
+            };
+            streetsidesoftware.code-spell-checker-russian = mk {
+              publisher = "streetsidesoftware";
+              name = "code-spell-checker-russian";
+              version = "2.2.3";
+              sha256 = "sha256-2sLYp6xaCo8RREK7CSWqunW56zJcKNbxHY6VHQqpi1M=";
+            };
           in
           (with vscode-extensions; [
             arrterian.nix-env-selector
@@ -36,6 +48,8 @@
             ms-vscode-remote.remote-ssh
             ms-vscode.cmake-tools
             redhat.vscode-yaml
+            streetsidesoftware.code-spell-checker
+            streetsidesoftware.code-spell-checker-russian
             timonwong.shellcheck
             trond-snekvik.simple-rst
             twxs.cmake
