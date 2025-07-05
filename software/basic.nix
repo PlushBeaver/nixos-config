@@ -23,7 +23,6 @@
     btrfs-progs
     ntfs3g
     ntfsprogs
-    smartmontools
 
     file
     inotify-tools

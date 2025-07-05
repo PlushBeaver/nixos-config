@@ -23,16 +23,4 @@
   programs.ssh.startAgent = true;
 
   programs.wireshark.enable = true;
-
-  networking.wireguard.enable = true;
-  networking.wireguard.interfaces."wg0" = let wg = inputs.secrets.wireguard;
-  in {
-    ips = [ "10.8.0.2/30" ];
-    inherit (wg) privateKey;
-    peers = [{
-      inherit (wg) endpoint publicKey;
-      allowedIPs = [ "0.0.0.0/0" ];
-    }];
-    allowedIPsAsRoutes = false;
-  };
 }

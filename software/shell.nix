@@ -31,7 +31,7 @@
         enableVteIntegration = true;
         autocd = true;
         history.extended = true;
-        initExtra = "unset RPROMPT";
+        initContent = "unset RPROMPT";
         prezto = {
           enable = true;
           pmodules = [

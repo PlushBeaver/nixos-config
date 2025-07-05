@@ -14,11 +14,6 @@
     xorg.xhost
     xorg.xkill
 
-    aspellDicts.ru
-    aspellDicts.en
-    aspellDicts.en-computers
-    aspellDicts.en-science
-
     otpclient
   ];
 

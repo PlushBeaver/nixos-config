@@ -51,8 +51,8 @@
   console.keyMap = "ru";
 
   services.pipewire.enable = lib.mkForce false;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+  services.pulseaudio.enable = true;
+  services.pulseaudio.support32Bit = true;
 
   environment.systemPackages = [ pkgs.linuxPackages.nvidia_x11 ];
   hardware.nvidia.open = false;

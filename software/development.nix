@@ -10,8 +10,6 @@
     moreutils
     openssl
 
-    git-crypt
-
     gcc
     gdb
     gnumake
