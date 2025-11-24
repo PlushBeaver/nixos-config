@@ -7,6 +7,7 @@
     useNetworkd = true;
     useDHCP = false;
     interfaces = {
+      enp4s4.useDHCP = true;
       enp5s5.useDHCP = true;
     };
 
