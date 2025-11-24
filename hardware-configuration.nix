@@ -41,6 +41,11 @@
           fsType = "tmpfs";
           options = [ "noatime" ];
         };
+        "/home/dmitry/work/bifit/owncloud" = {
+          device = "https://owncloud.netdike/remote.php/dav/files/kozlyuk/";
+          fsType = "davfs";
+          options = [ "users" "noauto" "grpid" ];
+        };
     };
 
   swapDevices = [

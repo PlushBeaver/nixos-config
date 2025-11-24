@@ -50,5 +50,7 @@ in {
     RuntimeMaxUse=64M
     '';
 
-  environment.systemPackages = [ nicReloadScript ];
+  environment.systemPackages = [ pkgs.davfs2 nicReloadScript ];
+
+  services.davfs2.enable = true;
 }
